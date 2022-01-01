@@ -24,8 +24,10 @@ But even it is is the right shell, "reading the startup files" is misleading.
 These are not configuration files where you simply "read" the "settings" from then;
 rather, they are full-blown scripts whose content has to be _run_ to compute and set the variables you're interested in, such as `$PATH`.
 
-"But my `~/.profile` only contains assignments like `PATH=/usr/bin`. Well, that's great for you, but it's not true in general.
+Some folk might say …
+> but my `~/.profile` only contains assignments like `PATH=/usr/bin`
 
+… which is great for them, but not true in general, and in practice
 `~/.profile` oftens contains things like:
 * `PATH=$PATH:$HOME/bin:/usr/local/bin`
 * `if [ -n "$foo" ]; then PATH=$foo/bin:$PATH ; fi`
@@ -37,7 +39,7 @@ rather, they are full-blown scripts whose content has to be _run_ to compute and
     esac
   done
   ```
-Good luck "reading" the "settings" from those.
+Good luck "reading" the "settings" from those without resorting to invoking an actual shell to run the file and see what it does.
 
 And being scripts, they can contain _any_ commands, not just settings for `PATH`.
 It's not unheard of for people to write things like `exec zsh -i` or `exec startx` inside `.profile` or `.login`.
