@@ -20,6 +20,9 @@ everything in `/usr/bin`, but since they have a symlink from `/usr/bin` to `/bin
 that means that `/bin/sh` is still valid. Other systems have neither `/bin` nor
 `/usr/bin`, having instead `/system/bin`, so again you're no worse off by using
 `/bin/sh`.
+>
+> The nexus of the security vulnerability is that using `#!/usr/bin/env` ensures that
+the script itself is unable to sanitize the environment before relying upon it.
 
 It is often suggested that <tt>#!/usr/bin/env <em>whatever</em></tt> is harmless
 even when it provides no benefit.
