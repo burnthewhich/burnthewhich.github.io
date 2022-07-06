@@ -3,6 +3,10 @@
 This business of using <tt>#!/usr/bin/env <em>whatever</em></tt> is getting out
 of hand.
 
+It was originally suggested as a fix for a specific problem, but somehow it's
+morphed into a general purpose "portability" fix. And worse, it's started being
+promoted as "best practice" in some circles, when it's anything but.
+
 There is a widespread myth that it is more "portable" than
 <tt>#!<em>/path/to/whatever</em></tt>, and that portability is all that matters.
 
@@ -29,10 +33,6 @@ both true _and_ wrong: we have security breaches precisely because of assumption
 that things are safe _because nothing else stupid has been done_. The "best
 practice" approach to security includes "defence in depth": many layers of guards
 and locks, because some of them will inevitably be broken.
-
-It was originally suggested as a fix for a specific problem, but somehow it's
-morphed into a general purpose "portability" fix. And worse, it's started being
-promoted as "best practice" in some circles, when it's anything but.
 
 The "beneficiaries", if you can call them that, are the users who are too naïve
 to edit the shebang line and put the correct path to the interpreter there.
